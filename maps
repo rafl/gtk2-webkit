@@ -1,0 +1,6 @@
+WEBKIT_TYPE_WEB_VIEW				WebKitWebView				GObject	Gtk2::WebKit::WebView
+WEBKIT_TYPE_WEB_SETTINGS			WebKitWebSettings			GObject	Gtk2::WebKit::WebSettings
+WEBKIT_TYPE_WEB_HISTORY_ITEM		WebKitWebHistoryItem		GObject	Gtk2::WebKit::WebHistoryItem
+WEBKIT_TYPE_WEB_FRAME				WebKitWebFrame				GObject	Gtk2::WebKit::WebFrame
+WEBKIT_TYPE_WEB_BACK_FORWARD_LIST	WebKitWebBackForwardList	GObject	Gtk2::WebKit::WebBackForwardList
+WEBKIT_TYPE_NETWORK_REQUEST			WebKitNetworkRequest		GObject	Gtk2::WebKit::NetworkRequest

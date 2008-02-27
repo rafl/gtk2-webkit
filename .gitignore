@@ -1,0 +1,10 @@
+*.c
+*.o
+MANIFEST*
+!MANIFEST.SKIP
+Makefile*
+!Makefile.PL
+*.bs
+Gtk2-WebKit-*
+build
+*blib

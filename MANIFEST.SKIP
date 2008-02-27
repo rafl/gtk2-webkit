@@ -1,0 +1,9 @@
+\.o$
+\.c$
+build\b
+blib\b
+^MANIFEST(?!\.SKIP$)
+^Makefile(?!\.PL$)
+\.bs$
+^\.git
+^Gtk2-WebKit-

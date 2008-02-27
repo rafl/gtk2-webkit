@@ -1,0 +1,22 @@
+Gtk2-WebKit version 0.01
+
+INSTALLATION
+
+To install this module, run the following commands:
+
+	perl Makefile.PL
+	make
+	make test
+	make install
+
+DEPENDENCIES
+
+  - Gtk2
+  - WebKitGtk+
+
+COPYRIGHT AND LICENCE
+
+Copyright (C) 2008, Florian Ragwitz
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
