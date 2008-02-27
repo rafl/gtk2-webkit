@@ -2,7 +2,7 @@
 \.c$
 build\b
 blib\b
-^MANIFEST(?!\.SKIP$)
+^MANIFEST\.(?!SKIP$)
 ^Makefile(?!\.PL$)
 \.bs$
 ^\.git

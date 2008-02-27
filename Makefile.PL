@@ -48,11 +48,13 @@ $webkit->install(catfile('build', 'webkit-autogen.h'));
 $webkit->save_config(catfile('build', 'IFiles.pm'));
 
 WriteMakefile(
-    NAME         => 'Gtk2::WebKit',
-    VERSION_FROM => 'lib/Gtk2/WebKit.pm',
-    PREREQ_PM    => \%PREREQ_PM,
-    XSPROTOARG   => '-noprototypes',
-    MAN3PODS     => {
+    NAME          => 'Gtk2::WebKit',
+    VERSION_FROM  => 'lib/Gtk2/WebKit.pm',
+    ABSTRACT_FROM => 'lib/Gtk2/WebKit.pm',
+    LICENSE       => 'perl',
+    PREREQ_PM     => \%PREREQ_PM,
+    XSPROTOARG    => '-noprototypes',
+    MAN3PODS      => {
         Glib::MakeHelper->do_pod_files(@xs_files),
     },
     $webkit->get_makefile_vars,
