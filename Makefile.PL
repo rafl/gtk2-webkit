@@ -51,6 +51,7 @@ WriteMakefile(
     NAME          => 'Gtk2::WebKit',
     VERSION_FROM  => 'lib/Gtk2/WebKit.pm',
     ABSTRACT_FROM => 'lib/Gtk2/WebKit.pm',
+    AUTHOR        => 'Florian Ragwitz <rafl@debian.org>',
     LICENSE       => 'perl',
     PREREQ_PM     => \%PREREQ_PM,
     XSPROTOARG    => '-noprototypes',
