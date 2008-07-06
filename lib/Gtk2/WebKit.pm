@@ -28,6 +28,7 @@ Gtk2::WebKit - Web content engine library for Gtk2
 
     $view->open('http://perldition.org');
 
+    $window->show_all;
     Gtk2->main;
 
 =head1 DESCRIPTION
