@@ -3,6 +3,7 @@ Revision history for Gtk2-WebKit
 0.02  Sun, 06 Jul 2008 14:24:04 +0200
        * Make the SYNPOSIS code work by actually showing the widgets. Noticed
          and solved by Alex Vasilevsky <alex.vasilevsky@gmail.com>
+       * Add podcoverage test.
 
 0.01  Wed Feb 27 14:26:11 2008
        * Initial release.
