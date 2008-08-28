@@ -2,72 +2,24 @@
 
 use strict;
 use warnings;
-use Cwd;
-use ExtUtils::MakeMaker;
-use File::Spec::Functions qw/catfile/;
+use lib 'ext';
+use inc::Module::Install;
 
-my %PREREQ_PM = (
-        'Gtk2'                => 0,
-        'ExtUtils::Depends'   => 0,
-        'ExtUtils::PkgConfig' => 0,
-);
+name 'Gtk2-WebKit';
+license 'lgpl';
+perl_version '5.008';
+all_from 'lib/Gtk2/WebKit.pm';
 
-unless (eval <<'EOD') {
-use Gtk2::CodeGen;
-use Glib::MakeHelper;
-use ExtUtils::Depends;
-use ExtUtils::PkgConfig;
-1;
-EOD
-    warn "$@\n";
-    WriteMakefile(
-            PREREQ_FATAL => 1,
-            PREREQ_PM    => \%PREREQ_PM,
-    );
-}
+webkit;
 
-mkdir 'build', 0777;
+requires 'Gtk2';
 
-my %pkgconfig = ExtUtils::PkgConfig->find('webkit-1.0');
+configure_requires 'Gtk2::CodeGen';
+configure_requires 'Glib::MakeHelper';
+configure_requires 'ExtUtils::Depends';
+configure_requires 'ExtUtils::PkgConfig';
 
-Gtk2::CodeGen->parse_maps('webkit');
-Gtk2::CodeGen->write_boot(ignore => qr/^Gtk2::WebKit$/);
+no_index directory => qw/inc ext/;
+auto_provides;
 
-our @xs_files = <xs/*.xs>;
-
-our $webkit = ExtUtils::Depends->new('Gtk2::WebKit', 'Gtk2');
-$webkit->set_inc($pkgconfig{cflags} . ' -Wall -Werror');
-$webkit->set_libs($pkgconfig{libs});
-$webkit->add_xs(@xs_files);
-$webkit->add_pm('lib/Gtk2/WebKit.pm', '$(INST_LIBDIR)/WebKit.pm');
-
-my $cwd = cwd();
-$webkit->add_typemaps(map { catfile($cwd, $_) } catfile('build', 'webkit.typemap'));
-
-$webkit->install(catfile('build', 'webkit-autogen.h'));
-$webkit->save_config(catfile('build', 'IFiles.pm'));
-
-WriteMakefile(
-    NAME          => 'Gtk2::WebKit',
-    VERSION_FROM  => 'lib/Gtk2/WebKit.pm',
-    ABSTRACT_FROM => 'lib/Gtk2/WebKit.pm',
-    AUTHOR        => 'Florian Ragwitz <rafl@debian.org>',
-    LICENSE       => 'perl',
-    PREREQ_PM     => \%PREREQ_PM,
-    XSPROTOARG    => '-noprototypes',
-    MAN3PODS      => {
-        Glib::MakeHelper->do_pod_files(@xs_files),
-    },
-    $webkit->get_makefile_vars,
-);
-
-package MY;
-
-sub postamble {
-    return Glib::MakeHelper->postamble_clean
-        . Glib::MakeHelper->postamble_docs_full(
-            DEPENDS   => $::webkit,
-            XS_FILES  => \@::xs_files,
-            COPYRIGHT => 'Copyright (C) 2008, Florian Ragwitz',
-        );
-}
+WriteAll;
