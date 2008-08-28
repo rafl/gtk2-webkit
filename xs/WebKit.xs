@@ -2,6 +2,8 @@
 
 MODULE = Gtk2::WebKit	PACKAGE = Gtk2::WebKit	PREFIX = webkit_
 
+PROTOTYPES: disable
+
 guint
 webkit_major_version (class)
 	C_ARGS:

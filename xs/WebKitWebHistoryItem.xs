@@ -2,6 +2,8 @@
 
 MODULE = Gtk2::WebKit::WebHistoryItem	PACKAGE = Gtk2::WebKit::WebHistoryItem	PREFIX = webkit_web_history_item_
 
+PROTOTYPES: disable
+
 WebKitWebHistoryItem *
 webkit_web_history_item_new (class)
 	C_ARGS:

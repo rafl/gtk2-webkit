@@ -2,6 +2,8 @@
 
 MODULE = Gtk2::WebKit::WebFrame	PACKAGE = Gtk2::WebKit::WebFrame	PREFIX = webkit_web_frame_
 
+PROTOTYPES: disable
+
 WebKitWebFrame *
 webkit_web_frame_new (class, view)
 		WebKitWebView *view

@@ -2,6 +2,8 @@
 
 MODULE = Gtk2::WebKit::WebSettings	PACKAGE = Gtk2::WebKit::WebSettings	PREFIX = webkit_web_settings_
 
+PROTOTYPES: disable
+
 WebKitWebSettings *
 webkit_web_settings_new (class)
 	C_ARGS:

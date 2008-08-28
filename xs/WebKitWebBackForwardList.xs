@@ -2,6 +2,8 @@
 
 MODULE = Gtk2::WebKit::WebBackForwardList	PACKAGE = Gtk2::WebKit::WebBackForwardList	PREFIX = webkit_web_back_forward_list_
 
+PROTOTYPES: disable
+
 WebKitWebBackForwardList *
 webkit_web_back_forward_list_new_with_web_view (class, web_view)
 		WebKitWebView *web_view

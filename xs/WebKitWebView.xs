@@ -2,6 +2,8 @@
 
 MODULE = Gtk2::WebKit::WebView	PACKAGE = Gtk2::WebKit::WebView	PREFIX = webkit_web_view_
 
+PROTOTYPES: disable
+
 GtkWidget *
 webkit_web_view_new (class)
 	C_ARGS:

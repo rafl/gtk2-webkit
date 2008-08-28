@@ -2,6 +2,8 @@
 
 MODULE = Gtk2::WebKit::NetworkRequest	PACKAGE = Gtk2::WebKit::NetworkRequest	PREFIX = webkit_network_request_
 
+PROTOTYPES: disable
+
 WebKitNetworkRequest *
 webkit_network_request_new (class, uri)
 		const gchar *uri
