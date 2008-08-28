@@ -1,5 +1,21 @@
 Revision history for Gtk2-WebKit
 
+0.03  Thu, 28 Aug 2008 07:35:34 +0200
+       * Relicense under LGPL.
+       * Bind zoom-related methods:
+         - web_view_get_zoom_level
+         - web_view_set_zoom_level
+         - view_zoom_in
+         - view_zoom_out
+         - web_view_get_full_content_zoom
+         - web_view_set_full_content_zoom
+       * Bind version-related methods:
+         - major_version
+         - minor_version
+         - micro_version
+         - check_version
+       * Switch from ExtUtils::MakeMaker to Module::Install.
+
 0.02  Sun, 06 Jul 2008 14:24:04 +0200
        * Make the SYNPOSIS code work by actually showing the widgets. Noticed
          and solved by Alex Vasilevsky <alex.vasilevsky@gmail.com>
