@@ -182,3 +182,29 @@ void
 webkit_web_view_set_transparent (web_view, flag)
 		WebKitWebView *web_view
 		gboolean flag
+
+gfloat
+webkit_web_view_get_zoom_level (web_view)
+		WebKitWebView *web_view
+
+void
+webkit_web_view_set_zoom_level (web_view, zoom_level)
+		WebKitWebView *web_view
+		gfloat zoom_level
+
+void
+webkit_web_view_zoom_in (web_view)
+		WebKitWebView *web_view
+
+void
+webkit_web_view_zoom_out (web_view)
+		WebKitWebView *web_view
+
+gboolean
+webkit_web_view_get_full_content_zoom (web_view)
+		WebKitWebView *web_view
+
+void
+webkit_web_view_set_full_content_zoom (web_view, full_content_zoom)
+		WebKitWebView *web_view
+		gboolean full_content_zoom
