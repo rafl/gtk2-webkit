@@ -19,7 +19,15 @@ sub webkit {
 
     mkdir 'build', 0777;
 
-    my %pkgconfig = ExtUtils::PkgConfig->find('webkit-1.0');
+    my %pkgconfig;
+    eval {
+        %pkgconfig = ExtUtils::PkgConfig->find('webkit-1.0');
+    };
+
+    if (my $error = $@) {
+        print STDERR $error;
+        return;
+    }
 
     Gtk2::CodeGen->parse_maps('webkit');
     Gtk2::CodeGen->write_boot(ignore => qr/^Gtk2::WebKit$/);
@@ -45,7 +53,7 @@ sub webkit {
         },
     );
 
-    return;
+    return 1;
 }
 
 package MY;

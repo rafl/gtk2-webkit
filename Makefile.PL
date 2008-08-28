@@ -10,7 +10,7 @@ license 'lgpl';
 perl_version '5.008';
 all_from 'lib/Gtk2/WebKit.pm';
 
-webkit;
+webkit or exit;
 
 requires 'Gtk2';
 
