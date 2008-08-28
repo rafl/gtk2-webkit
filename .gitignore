@@ -8,3 +8,5 @@ Makefile*
 Gtk2-WebKit-*
 build
 *blib
+inc
+META.yml
