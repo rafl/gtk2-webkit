@@ -1,5 +1,8 @@
 Revision history for Gtk2-WebKit
 
+0.04  Mon, 15 Dec 2008 11:45:46 +0100
+       * Load Gtk2.pm to make manifypods work on cygwin (closes RT#41709).
+
 0.03  Thu, 28 Aug 2008 07:35:34 +0200
        * Relicense under LGPL.
        * Bind zoom-related methods:
