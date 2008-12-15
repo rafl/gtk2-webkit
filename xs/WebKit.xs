@@ -18,9 +18,9 @@ webkit_micro_version (class)
 
 gboolean
 webkit_check_version (class, major, minor, micro)
-		guint major
-		guint minor
-		guint micro
+		gint major
+		gint minor
+		gint micro
 	CODE:
 		RETVAL = WEBKIT_CHECK_VERSION (major, minor, micro);
 	OUTPUT:
