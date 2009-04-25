@@ -196,6 +196,10 @@ WebKitWebSettings *
 webkit_web_view_get_settings (web_view)
 		WebKitWebView *web_view
 
+WebKitWebInspector *
+webkit_web_view_get_inspector (web_view)
+		WebKitWebView *web_view
+
 gboolean
 webkit_web_view_get_transparent (web_view)
 		WebKitWebView *web_view

@@ -4,3 +4,4 @@ WEBKIT_TYPE_WEB_HISTORY_ITEM		WebKitWebHistoryItem		GObject	Gtk2::WebKit::WebHis
 WEBKIT_TYPE_WEB_FRAME				WebKitWebFrame				GObject	Gtk2::WebKit::WebFrame
 WEBKIT_TYPE_WEB_BACK_FORWARD_LIST	WebKitWebBackForwardList	GObject	Gtk2::WebKit::WebBackForwardList
 WEBKIT_TYPE_NETWORK_REQUEST			WebKitNetworkRequest		GObject	Gtk2::WebKit::NetworkRequest
+WEBKIT_TYPE_WEB_INSPECTOR			WebKitWebInspector			GObject	Gtk2::WebKit::WebInspector
