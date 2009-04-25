@@ -92,6 +92,11 @@ webkit_web_view_load_html_string (web_view, content, base_uri)
 		const gchar *content
 		const gchar *base_uri
 
+void
+webkit_web_view_load_request (web_view, request)
+		WebKitWebView *web_view
+		WebKitNetworkRequest *request
+
 gboolean
 webkit_web_view_search_text (web_view, string, case_sensitive, forward, wrap)
 		WebKitWebView *web_view
