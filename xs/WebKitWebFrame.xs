@@ -35,6 +35,11 @@ webkit_web_frame_get_parent (frame)
 		WebKitWebFrame *frame
 
 void
+webkit_web_frame_load_uri (frame, uri)
+		WebKitWebFrame *frame
+		const gchar *uri
+
+void
 webkit_web_frame_load_request (frame, request)
 		WebKitWebFrame *frame
 		WebKitNetworkRequest *request
