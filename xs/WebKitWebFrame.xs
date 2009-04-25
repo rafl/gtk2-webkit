@@ -40,6 +40,14 @@ webkit_web_frame_load_uri (frame, uri)
 		const gchar *uri
 
 void
+webkit_web_frame_load_string (frame, content, mime_type, encoding, base_uri)
+		WebKitWebFrame *frame
+		const gchar *content
+		const gchar *mime_type
+		const gchar *encoding
+		const gchar *base_uri
+
+void
 webkit_web_frame_load_request (frame, request)
 		WebKitWebFrame *frame
 		WebKitNetworkRequest *request
