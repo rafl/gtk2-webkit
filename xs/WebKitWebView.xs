@@ -256,3 +256,9 @@ webkit_web_view_set_custom_encoding (web_view, encoding)
 const gchar *
 webkit_web_view_get_custom_encoding (web_view)
 		WebKitWebView *web_view
+
+void
+webkit_web_view_move_cursor (web_view, step, count)
+		WebKitWebView *web_view
+		GtkMovementStep step
+		gint count
