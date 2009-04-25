@@ -68,3 +68,17 @@ webkit_web_frame_find_frame (frame, name)
 #TODO
 #WEBKIT_API JSGlobalContextRef
 #webkit_web_frame_get_global_context (WebKitWebFrame* frame);
+
+GtkPrintOperationResult
+webkit_web_frame_print_full (frame, operation, action)
+		WebKitWebFrame *frame
+		GtkPrintOperation *operation
+		GtkPrintOperationAction action
+	PREINIT:
+		GError *error = NULL;
+	C_ARGS:
+		frame, operation, action, &error
+	POSTCALL:
+		if (error) {
+			gperl_croak_gerror (NULL, error);
+		}
