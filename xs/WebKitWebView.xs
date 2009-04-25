@@ -243,3 +243,7 @@ void
 webkit_web_view_set_full_content_zoom (web_view, full_content_zoom)
 		WebKitWebView *web_view
 		gboolean full_content_zoom
+
+const gchar *
+webkit_web_view_get_encoding (web_view)
+		WebKitWebView *web_view
