@@ -4,11 +4,15 @@ MODULE = Gtk2::WebKit::WebFrame	PACKAGE = Gtk2::WebKit::WebFrame	PREFIX = webkit
 
 PROTOTYPES: disable
 
+#ifndef WEBKIT_DISABLE_DEPRECATED
+
 WebKitWebFrame *
 webkit_web_frame_new (class, view)
 		WebKitWebView *view
 	C_ARGS:
 		view
+
+#endif
 
 WebKitWebView *
 webkit_web_frame_get_web_view (frame)
