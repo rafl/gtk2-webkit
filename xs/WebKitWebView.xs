@@ -8,6 +8,10 @@ GtkWidget *
 webkit_web_view_new (class)
 	C_ARGS:
 
+const gchar *
+webkit_web_view_get_title (web_view)
+		WebKitWebView *web_view
+
 void
 webkit_web_view_set_maintains_back_forward_list (web_view, flag)
 		WebKitWebView *web_view
