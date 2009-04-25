@@ -91,3 +91,8 @@ void
 webkit_web_back_forward_list_set_limit (web_back_forward_list, limit)
 		WebKitWebBackForwardList *web_back_forward_list
 		gint limit
+
+void
+webkit_web_back_forward_list_add_item (web_back_forward_list, history_item)
+		WebKitWebBackForwardList *web_back_forward_list
+		WebKitWebHistoryItem *history_item
