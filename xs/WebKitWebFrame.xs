@@ -82,3 +82,7 @@ webkit_web_frame_print_full (frame, operation, action)
 		if (error) {
 			gperl_croak_gerror (NULL, error);
 		}
+
+void
+webkit_web_frame_print (frame)
+		WebKitWebFrame *frame
