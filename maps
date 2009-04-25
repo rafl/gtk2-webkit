@@ -6,3 +6,5 @@ WEBKIT_TYPE_WEB_BACK_FORWARD_LIST	WebKitWebBackForwardList	GObject	Gtk2::WebKit:
 WEBKIT_TYPE_NETWORK_REQUEST			WebKitNetworkRequest		GObject	Gtk2::WebKit::NetworkRequest
 WEBKIT_TYPE_WEB_INSPECTOR			WebKitWebInspector			GObject	Gtk2::WebKit::WebInspector
 WEBKIT_TYPE_WEB_WINDOW_FEATURES		WebKitWebWindowFeatures		GObject	Gtk2::WebKit::WebWindowFeatures
+WEBKIT_TYPE_DOWNLOAD				WebKitDownload				GObject	Gtk2::WebKit::Download
+WEBKIT_TYPE_DOWNLOAD_STATUS			WebKitDownloadStatus		GEnum	Gtk2::WebKit::DownloadStatus
