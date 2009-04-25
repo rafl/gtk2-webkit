@@ -205,6 +205,11 @@ webkit_web_view_get_window_features (web_view)
 		WebKitWebView *web_view
 
 gboolean
+webkit_web_view_can_show_mime_type (web_view, mime_type)
+		WebKitWebView *web_view
+		const gchar *mime_type
+
+gboolean
 webkit_web_view_get_transparent (web_view)
 		WebKitWebView *web_view
 
