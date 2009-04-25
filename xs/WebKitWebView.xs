@@ -200,6 +200,10 @@ WebKitWebInspector *
 webkit_web_view_get_inspector (web_view)
 		WebKitWebView *web_view
 
+WebKitWebWindowFeatures *
+webkit_web_view_get_window_features (web_view)
+		WebKitWebView *web_view
+
 gboolean
 webkit_web_view_get_transparent (web_view)
 		WebKitWebView *web_view
