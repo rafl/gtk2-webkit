@@ -8,3 +8,5 @@ WEBKIT_TYPE_WEB_INSPECTOR			WebKitWebInspector			GObject	Gtk2::WebKit::WebInspec
 WEBKIT_TYPE_WEB_WINDOW_FEATURES		WebKitWebWindowFeatures		GObject	Gtk2::WebKit::WebWindowFeatures
 WEBKIT_TYPE_DOWNLOAD				WebKitDownload				GObject	Gtk2::WebKit::Download
 WEBKIT_TYPE_DOWNLOAD_STATUS			WebKitDownloadStatus		GEnum	Gtk2::WebKit::DownloadStatus
+WEBKIT_TYPE_WEB_NAVIGATION_ACTION	WebKitWebNavigationAction	GObject	Gtk2::WebKit::WebNavigationAction
+WEBKIT_TYPE_WEB_NAVIGATION_REASON	WebKitWebNavigationReason	GEnum	Gtk2::WebKit::WebNavigationReason
