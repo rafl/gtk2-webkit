@@ -74,6 +74,11 @@ webkit_web_view_reload_bypass_cache (web_view)
 		WebKitWebView *web_view
 
 void
+webkit_web_view_load_uri (web_view, uri)
+		WebKitWebView *web_view
+		const gchar *uri
+
+void
 webkit_web_view_load_string (web_view, content, content_mime_type, content_encoding, base_uri)
 		WebKitWebView *web_view
 		const gchar *content
