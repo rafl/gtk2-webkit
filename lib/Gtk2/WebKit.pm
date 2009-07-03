@@ -5,7 +5,7 @@ use warnings;
 use Gtk2;
 use base qw/DynaLoader/;
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 sub dl_load_flags { 0x01 }
 

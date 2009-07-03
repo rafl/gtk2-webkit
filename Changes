@@ -1,5 +1,32 @@
 Revision history for Gtk2-WebKit
 
+0.05  Sat, 04 Jul 2009 01:08:59 +0200
+       * Upgrade ppport.h from 3.14 to 3.19.
+       * Don't provide glue to webkit_web_frame_new if it isn't available.
+       * Bind new methods.
+         - webkit_web_back_forward_list_add_item
+         - webkit_web_frame_load_uri
+         - webkit_web_frame_load_string
+         - webkit_web_frame_print_full
+         - webkit_web_frame_print
+         - webkit_web_view_get_title
+         - webkit_web_view_get_uri
+         - webkit_web_view_reload_bypass_cache
+         - webkit_web_view_load_uri
+         - webkit_web_view_load_request
+         - webkit_web_view_get_inspector
+         - webkit_web_view_get_window_features
+         - webkit_web_view_can_show_mime_type
+         - webkit_web_view_get_encoding
+         - webkit_web_view_set_custom_encoding
+         - webkit_web_view_get_custom_encoding
+         - webkit_web_view_move_cursor
+         - WebKitWebInspector API
+         - WebKitWebWindowFeatures API
+         - WebKitDownload API
+         - WebKitWebNavigationAction API
+         - WebKitWebPolicyDecision API
+
 0.04  Mon, 15 Dec 2008 11:45:46 +0100
        * Load Gtk2.pm to make manifypods work on cygwin (closes RT#41709).
 
