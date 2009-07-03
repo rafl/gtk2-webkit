@@ -65,7 +65,7 @@ Florian Ragwitz  C<< <rafl@debian.org> >>
 
 =head1 LICENCE AND COPYRIGHT
 
-Copyright (c) 2008, Florian Ragwitz C<< <rafl@debian.org> >>.
+Copyright (c) 2008, 2009  Florian Ragwitz C<< <rafl@debian.org> >>.
 
 This is free software, licensed under:
 
