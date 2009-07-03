@@ -10,3 +10,5 @@ build
 *blib
 inc
 META.yml
+README
+Debian*
