@@ -35,7 +35,7 @@ sub webkit {
     our @xs_files = <xs/*.xs>;
 
     our $webkit = ExtUtils::Depends->new('Gtk2::WebKit', 'Gtk2');
-    $webkit->set_inc($pkgconfig{cflags} . ' -Wall -Werror');
+    $webkit->set_inc($pkgconfig{cflags} . ($Module::Install::AUTHOR ? ' -Wall -Werror' : ''));
     $webkit->set_libs($pkgconfig{libs});
     $webkit->add_xs(@xs_files);
     $webkit->add_pm('lib/Gtk2/WebKit.pm', '$(INST_LIBDIR)/WebKit.pm');
