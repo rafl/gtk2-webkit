@@ -1,8 +1,73 @@
 #include "perl_webkit.h"
+#include <gperl_marshal.h>
+
+STATIC void
+store_sting (gpointer key, gpointer value, gpointer user_data)
+{
+    HV *hv = (HV *)user_data;
+    if (!hv_store (hv, (const char *)key, strlen ((const char *)key), newSVGChar ((const gchar *)value), 0)) {
+        croak ("moo");
+    }
+}
+
+STATIC SV *
+string_hashtable_to_href (GHashTable *params)
+{
+    HV *hv = newHV ();
+    g_hash_table_foreach (params, store_sting, hv);
+    return newRV_noinc ((SV *)hv);
+}
+
+STATIC void
+perl_webkit_web_view_marshall_create_plugin_widget (GClosure *closure,
+                                                    GValue *return_value,
+                                                    guint n_param_values,
+                                                    const GValue *param_values,
+                                                    gpointer invocant_hint,
+                                                    gpointer marshal_data)
+{
+    dGPERL_CLOSURE_MARSHAL_ARGS;
+
+    PERL_UNUSED_VAR (return_value);
+    PERL_UNUSED_VAR (n_param_values);
+    PERL_UNUSED_VAR (invocant_hint);
+
+    GPERL_CLOSURE_MARSHAL_INIT (closure, marshal_data);
+
+    ENTER;
+    SAVETMPS;
+    PUSHMARK (SP);
+
+    GPERL_CLOSURE_MARSHAL_PUSH_INSTANCE (param_values);
+
+    XPUSHs (sv_2mortal (newSVGChar (g_value_get_string (param_values + 1))));
+    XPUSHs (sv_2mortal (newSVGChar (g_value_get_string (param_values + 2))));
+    XPUSHs (sv_2mortal (string_hashtable_to_href ((GHashTable *)g_value_get_boxed (param_values + 3))));
+
+    GPERL_CLOSURE_MARSHAL_PUSH_DATA;
+
+    PUTBACK;
+
+    GPERL_CLOSURE_MARSHAL_CALL (G_SCALAR);
+
+    SPAGAIN;
+
+    if (count != 1) {
+        croak ("moo");
+    }
+
+    g_value_set_object (return_value, SvGtkWidget (POPs));
+
+    FREETMPS;
+    LEAVE;
+}
 
 MODULE = Gtk2::WebKit::WebView	PACKAGE = Gtk2::WebKit::WebView	PREFIX = webkit_web_view_
 
 PROTOTYPES: disable
+
+BOOT:
+    gperl_signal_set_marshaller_for (WEBKIT_TYPE_WEB_VIEW, "create-plugin-widget", perl_webkit_web_view_marshall_create_plugin_widget);
 
 GtkWidget *
 webkit_web_view_new (class)
