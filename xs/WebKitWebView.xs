@@ -4,18 +4,18 @@
 STATIC void
 store_sting (gpointer key, gpointer value, gpointer user_data)
 {
-    HV *hv = (HV *)user_data;
-    if (!hv_store (hv, (const char *)key, strlen ((const char *)key), newSVGChar ((const gchar *)value), 0)) {
-        croak ("moo");
-    }
+	if (!hv_store ((HV *)user_data, (const char *)key, strlen ((const char *)key),
+	               newSVGChar ((const gchar *)value), 0)) {
+		croak ("failed to store in hash");
+	}
 }
 
 STATIC SV *
-string_hashtable_to_href (GHashTable *params)
+string_hashtable_to_hashref (GHashTable *params)
 {
-    HV *hv = newHV ();
-    g_hash_table_foreach (params, store_sting, hv);
-    return newRV_noinc ((SV *)hv);
+	HV *hv = newHV ();
+	g_hash_table_foreach (params, store_sting, hv);
+	return newRV_noinc ((SV *)hv);
 }
 
 STATIC void
@@ -26,40 +26,40 @@ perl_webkit_web_view_marshall_create_plugin_widget (GClosure *closure,
                                                     gpointer invocant_hint,
                                                     gpointer marshal_data)
 {
-    dGPERL_CLOSURE_MARSHAL_ARGS;
+	dGPERL_CLOSURE_MARSHAL_ARGS;
 
-    PERL_UNUSED_VAR (return_value);
-    PERL_UNUSED_VAR (n_param_values);
-    PERL_UNUSED_VAR (invocant_hint);
+	PERL_UNUSED_VAR (return_value);
+	PERL_UNUSED_VAR (n_param_values);
+	PERL_UNUSED_VAR (invocant_hint);
 
-    GPERL_CLOSURE_MARSHAL_INIT (closure, marshal_data);
+	GPERL_CLOSURE_MARSHAL_INIT (closure, marshal_data);
 
-    ENTER;
-    SAVETMPS;
-    PUSHMARK (SP);
+	ENTER;
+	SAVETMPS;
+	PUSHMARK (SP);
 
-    GPERL_CLOSURE_MARSHAL_PUSH_INSTANCE (param_values);
+	GPERL_CLOSURE_MARSHAL_PUSH_INSTANCE (param_values);
 
-    XPUSHs (sv_2mortal (newSVGChar (g_value_get_string (param_values + 1))));
-    XPUSHs (sv_2mortal (newSVGChar (g_value_get_string (param_values + 2))));
-    XPUSHs (sv_2mortal (string_hashtable_to_href ((GHashTable *)g_value_get_boxed (param_values + 3))));
+	XPUSHs (sv_2mortal (newSVGChar (g_value_get_string (param_values + 1))));
+	XPUSHs (sv_2mortal (newSVGChar (g_value_get_string (param_values + 2))));
+	XPUSHs (sv_2mortal (string_hashtable_to_hashref ((GHashTable *)g_value_get_boxed (param_values + 3))));
 
-    GPERL_CLOSURE_MARSHAL_PUSH_DATA;
+	GPERL_CLOSURE_MARSHAL_PUSH_DATA;
 
-    PUTBACK;
+	PUTBACK;
 
-    GPERL_CLOSURE_MARSHAL_CALL (G_SCALAR);
+	GPERL_CLOSURE_MARSHAL_CALL (G_SCALAR);
 
-    SPAGAIN;
+	SPAGAIN;
 
-    if (count != 1) {
-        croak ("moo");
-    }
+	if (count != 1) {
+		croak ("create-plugin-widget handlers need to return a single value");
+	}
 
-    g_value_set_object (return_value, SvGtkWidget (POPs));
+	g_value_set_object (return_value, SvGtkWidget (POPs));
 
-    FREETMPS;
-    LEAVE;
+	FREETMPS;
+	LEAVE;
 }
 
 MODULE = Gtk2::WebKit::WebView	PACKAGE = Gtk2::WebKit::WebView	PREFIX = webkit_web_view_
@@ -67,7 +67,9 @@ MODULE = Gtk2::WebKit::WebView	PACKAGE = Gtk2::WebKit::WebView	PREFIX = webkit_w
 PROTOTYPES: disable
 
 BOOT:
-    gperl_signal_set_marshaller_for (WEBKIT_TYPE_WEB_VIEW, "create-plugin-widget", perl_webkit_web_view_marshall_create_plugin_widget);
+	gperl_signal_set_marshaller_for (WEBKIT_TYPE_WEB_VIEW,
+	                                 "create-plugin-widget",
+	                                 perl_webkit_web_view_marshall_create_plugin_widget);
 
 GtkWidget *
 webkit_web_view_new (class)
