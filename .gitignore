@@ -12,3 +12,5 @@ inc
 META.yml
 README
 Debian*
+.*
+!.gitignore
