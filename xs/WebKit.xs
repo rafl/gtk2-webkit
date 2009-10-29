@@ -29,4 +29,6 @@ webkit_check_version (class, major, minor, micro)
 BOOT:
 #include "register.xsh"
 #include "boot.xsh"
-g_thread_init (NULL);
+	if (!g_thread_supported ()) {
+		g_thread_init (NULL);
+	}
