@@ -33,5 +33,4 @@ EOH
 $view->load_html_string($html, 'file:///foo');
 
 Gtk2->main;
-
 done_testing;

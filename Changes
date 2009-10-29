@@ -1,5 +1,13 @@
 Revision history for Gtk2-WebKit
 
+0.07  Thu, 29 Oct 2009 17:01:04 +0100
+       * Implement a custom marshaller for WebView's create-plugin-widget
+         signal.
+         - Add tests for this (Jörn Reder).
+       * Work together with webkit versions that require initialisation
+         of glib's thread subsystem to be initialized externally.
+
+
 0.06  Mon, 20 Jul 2009 03:22:53 +0200
        * Don't pass any gcc-specific flags to the compiler.
 
