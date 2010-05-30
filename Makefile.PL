@@ -24,4 +24,6 @@ test_requires 'Test::More' => '0.89';
 no_index directory => qw/inc ext/;
 auto_provides;
 
+repository 'git://github.com/rafl/gtk2-webkit.git';
+
 WriteAll;
