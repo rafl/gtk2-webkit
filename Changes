@@ -1,5 +1,8 @@
 Revision history for Gtk2-WebKit
 
+0.08   Sun May 30 13:44:36 CEST 2010
+       * Bind new web_inspector methods (Dirk Koopman).
+
 0.07  Thu, 29 Oct 2009 17:01:04 +0100
        * Implement a custom marshaller for WebView's create-plugin-widget
          signal.
