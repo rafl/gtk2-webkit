@@ -34,9 +34,16 @@ gboolean
 webkit_web_data_source_is_loading (data_source)
 		WebKitWebDataSource *data_source
 
-#GString *
-#webkit_web_data_source_get_data (data_source)
-#		WebKitWebDataSource *data_source
+SV *
+webkit_web_data_source_get_data (data_source)
+		WebKitWebDataSource *data_source
+	PREINIT:
+		GString *data;
+	CODE:
+		data = webkit_web_data_source_get_data (data_source);
+		RETVAL = newSVpvn (data->str, data->len);
+	OUTPUT:
+		RETVAL
 
 WebKitWebResource *
 webkit_web_data_source_get_main_resource (data_source)

@@ -19,9 +19,16 @@ webkit_web_resource_new (class, data, url, mime_type, encoding, frame_name)
 	C_ARGS:
 		c_data, size, url, mime_type, encoding, frame_name
 
-#GString *
-#webkit_web_resource_get_data (web_resource)
-#		WebKitWebResource *web_resource
+SV *
+webkit_web_resource_get_data (web_resource)
+		WebKitWebResource *web_resource
+	PREINIT:
+		GString *data;
+	CODE:
+		data = webkit_web_resource_get_data (web_resource);
+		RETVAL = newSVpvn (data->str, data->len);
+	OUTPUT:
+		RETVAL
 
 const gchar *
 webkit_web_resource_get_uri (web_resource)
