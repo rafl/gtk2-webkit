@@ -29,6 +29,16 @@ webkit_security_origin_set_web_database_quota (security_origin, quota)
 		WebKitSecurityOrigin *security_origin
 		guint64 quota
 
-#GList *
-#webkit_security_origin_get_all_web_databases (security_origin)
-#		WebKitSecurityOrigin *security_origin
+void
+webkit_security_origin_get_all_web_databases (security_origin)
+		WebKitSecurityOrigin *security_origin
+	PREINIT:
+		GList *databases, *i;
+	PPCODE:
+		databases = webkit_security_origin_get_all_web_databases (security_origin);
+
+		for (i = databases; i; i = i->next) {
+			XPUSHs (newSVWebKitWebDatabase (i->data));
+		}
+
+		g_list_free (databases);

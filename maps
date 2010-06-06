@@ -12,6 +12,7 @@ WEBKIT_TYPE_WEB_NAVIGATION_ACTION		WebKitWebNavigationAction		GObject	Gtk2::WebK
 WEBKIT_TYPE_WEB_NAVIGATION_REASON		WebKitWebNavigationReason		GEnum	Gtk2::WebKit::WebNavigationReason
 WEBKIT_TYPE_WEB_POLICY_DECISION			WebKitWebPolicyDecision			GObject	Gtk2::WebKit::WebPolicyDecision
 WEBKIT_TYPE_LOAD_STATUS					WebKitLoadStatus				GEnum	Gtk2::WebKit::LoadStatus
+WEBKIT_TYPE_WEB_DATABASE				WebKitWebDatabase				GObject	Gtk2::WebKit::WebDatabase
 WEBKIT_TYPE_WEB_DATA_SOURCE				WebKitWebDataSource				GObject	Gtk2::WebKit::WebDataSource
 WEBKIT_TYPE_WEB_RESOURCE				WebKitWebResource				GObject	Gtk2::WebKit::WebResource
 WEBKIT_TYPE_SECURITY_ORIGIN				WebKitSecurityOrigin			GObject	Gtk2::WebKit::SecurityOrigin
