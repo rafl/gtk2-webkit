@@ -17,3 +17,6 @@ WEBKIT_TYPE_WEB_RESOURCE				WebKitWebResource				GObject	Gtk2::WebKit::WebResour
 WEBKIT_TYPE_SECURITY_ORIGIN				WebKitSecurityOrigin			GObject	Gtk2::WebKit::SecurityOrigin
 WEBKIT_TYPE_NETWORK_RESPONSE			WebKitNetworkResponse			GObject	Gtk2::WebKit::NetworkResponse
 WEBKIT_TYPE_GEOLOCATION_POLICY_DECISION	WebKitGeolocationPolicyDecision	GObject	Gtk2::WebKit::GeolocationPolicyDecision
+WEBKIT_TYPE_HIT_TEST_RESULT				WebKitHitTestResult				GObject	Gtk2::WebKit::HitTestResult
+WEBKIT_TYPE_HIT_TEST_RESULT_CONTEXT		WebKitHitTestResultContext		GFlags	Gtk2::WebKit::WebKitHitTestResultContext
+WEBKIT_TYPE_CACHE_MODEL					WebKitCacheModel				GEnum	Gtk2::WebKit::CacheModel

@@ -48,6 +48,13 @@ webkit_web_frame_load_string (frame, content, mime_type, encoding, base_uri)
 		const gchar *base_uri
 
 void
+webkit_web_frame_load_alternate_string (frame, content, base_url, unreachable_url)
+		WebKitWebFrame *frame
+		const gchar *content
+		const gchar *base_url
+		const gchar *unreachable_url
+
+void
 webkit_web_frame_load_request (frame, request)
 		WebKitWebFrame *frame
 		WebKitNetworkRequest *request

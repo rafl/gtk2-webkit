@@ -311,6 +311,10 @@ webkit_web_view_set_full_content_zoom (web_view, full_content_zoom)
 		WebKitWebView *web_view
 		gboolean full_content_zoom
 
+#SoupSession *
+#webkit_get_default_session (class)
+#	C_ARGS:
+
 const gchar *
 webkit_web_view_get_encoding (web_view)
 		WebKitWebView *web_view
@@ -329,3 +333,55 @@ webkit_web_view_move_cursor (web_view, step, count)
 		WebKitWebView *web_view
 		GtkMovementStep step
 		gint count
+
+WebKitLoadStatus
+webkit_web_view_get_load_status (web_view)
+		WebKitWebView *web_view
+
+gdouble
+webkit_web_view_get_progress (web_view)
+		WebKitWebView *web_view
+
+void
+webkit_web_view_undo (web_view)
+		WebKitWebView *web_view
+
+gboolean
+webkit_web_view_can_undo (web_view)
+		WebKitWebView *web_view
+
+void
+webkit_web_view_redo (web_view)
+		WebKitWebView *web_view
+
+gboolean
+webkit_web_view_can_redo (web_view)
+		WebKitWebView *web_view
+
+void
+webkit_web_view_set_view_source_mode (web_view, view_source_mode)
+		WebKitWebView *web_view
+		gboolean view_source_mode
+
+gboolean
+webkit_web_view_get_view_source_mode (web_view)
+		WebKitWebView *web_view
+
+#WebKitHitTestResult *
+#webkit_web_view_get_hit_test_result (web_view, event)
+#		WebKitWebView *web_view
+#		GdkEventButton *event
+
+const gchar *
+webkit_web_view_get_icon_uri (web_view)
+		WebKitWebView *web_view
+
+void
+webkit_set_cache_model (class, cache_model)
+		WebKitCacheModel cache_model
+	C_ARGS:
+		cache_model
+
+WebKitCacheModel
+webkit_get_cache_model (class)
+	C_ARGS:
