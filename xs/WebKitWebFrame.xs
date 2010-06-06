@@ -86,3 +86,31 @@ webkit_web_frame_print_full (frame, operation, action)
 void
 webkit_web_frame_print (frame)
 		WebKitWebFrame *frame
+
+WebKitLoadStatus
+webkit_web_frame_get_load_status (frame)
+		WebKitWebFrame *frame
+
+GtkPolicyType
+webkit_web_frame_get_horizontal_scrollbar_policy (frame)
+		WebKitWebFrame *frame
+
+GtkPolicyType
+webkit_web_frame_get_vertical_scrollbar_policy (frame)
+		WebKitWebFrame *frame
+
+WebKitWebDataSource *
+webkit_web_frame_get_data_source (frame)
+		WebKitWebFrame *frame
+
+WebKitWebDataSource *
+webkit_web_frame_get_provisional_data_source (frame)
+		WebKitWebFrame *frame
+
+WebKitSecurityOrigin *
+webkit_web_frame_get_security_origin (frame)
+		WebKitWebFrame *frame
+
+WebKitNetworkResponse *
+webkit_web_frame_get_network_response (frame)
+		WebKitWebFrame *frame
