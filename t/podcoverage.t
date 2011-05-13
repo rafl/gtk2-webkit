@@ -7,6 +7,7 @@ use Test::More;
 use Gtk2; # so the type system can be used
 
 eval 'use Test::Pod::Coverage';
+plan skip_all => 'Set TEST_POD to enable this' unless $ENV{TEST_POD};
 plan skip_all => 'Test::Pod::Coverage required' if $@;
 
 my @modules = map { 'Gtk2::WebKit::' . $_ } qw/
