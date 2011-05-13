@@ -1,5 +1,28 @@
 Revision history for Gtk2-WebKit
 
+0.09   Fri, 13 May 2011 11:59:36 +0200
+
+       * Bind many new WebKit features, including
+         + GeolocationPolicyDecision
+         + NetworkResponse
+         + SecurityOrigin
+         + WebDatabase
+         + WebDataSource
+         + WebResource
+         + WebFrame
+           - get_load_status
+           - get_security_origin
+           - get_network_response
+           - load_alternate_string
+           - scroll bar policies
+         + WebView
+           - get_load_status
+           - get_progress
+           - undo/redo
+           - set_view_source_mode
+           - get_icon_uri
+           - cache_model
+
 0.08   Sun May 30 13:44:36 CEST 2010
        * Bind new web_inspector methods (Dirk Koopman).
 
