@@ -26,6 +26,17 @@ webkit_check_version (class, major, minor, micro)
 	OUTPUT:
 		RETVAL
 
+
+#SoupSession *
+GObject *
+webkit_get_default_session (class)
+	CODE:
+		RETVAL = (GObject *) webkit_get_default_session();
+
+	OUTPUT:
+		RETVAL
+
+
 BOOT:
 #include "register.xsh"
 #include "boot.xsh"
