@@ -312,8 +312,13 @@ webkit_web_view_set_full_content_zoom (web_view, full_content_zoom)
 		gboolean full_content_zoom
 
 #SoupSession *
-#webkit_get_default_session (class)
-#	C_ARGS:
+GObject *
+webkit_get_default_session (class)
+	CODE:
+		RETVAL = (GObject *) webkit_get_default_session();
+
+	OUTPUT:
+		RETVAL
 
 const gchar *
 webkit_web_view_get_encoding (web_view)
