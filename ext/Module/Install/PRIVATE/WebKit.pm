@@ -34,7 +34,7 @@ sub webkit {
 
     our @xs_files = <xs/*.xs>;
 
-    our $webkit = ExtUtils::Depends->new('Gtk2::WebKit', 'Gtk2');
+    our $webkit = ExtUtils::Depends->new('Gtk2::WebKit', 'Gtk2', 'Gtk2::Soup');
     $webkit->set_inc($pkgconfig{cflags} . ($Module::Install::AUTHOR ? ' -Wall -Werror' : ''));
     $webkit->set_libs($pkgconfig{libs});
     $webkit->add_xs(@xs_files);

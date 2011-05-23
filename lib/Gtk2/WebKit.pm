@@ -3,6 +3,7 @@ package Gtk2::WebKit;
 use strict;
 use warnings;
 use Gtk2;
+use Gtk2::Soup;
 use base qw/DynaLoader/;
 
 our $VERSION = '0.09';
