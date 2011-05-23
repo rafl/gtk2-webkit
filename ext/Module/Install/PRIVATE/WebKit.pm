@@ -34,8 +34,19 @@ sub webkit {
 
     our @xs_files = <xs/*.xs>;
 
-    our $webkit = ExtUtils::Depends->new('Gtk2::WebKit', 'Gtk2', 'Gtk2::Soup');
-    $webkit->set_inc($pkgconfig{cflags} . ($Module::Install::AUTHOR ? ' -Wall -Werror' : ''));
+    my @extra_dependencies = 'Gtk2';
+    my $extra_cflags = "";
+    eval {
+        require Glib::Soup;
+        push @extra_dependencies, 'Glib::Soup';
+        $extra_cflags = " -DGLIB_SOUP_PERL";
+        1;
+    } or do {
+        my $error = $@;
+    };
+
+    our $webkit = ExtUtils::Depends->new('Gtk2::WebKit', 'Gtk2', @extra_dependencies);
+    $webkit->set_inc($pkgconfig{cflags} . ($Module::Install::AUTHOR ? ' -Wall -Werror' : '') . $extra_cflags);
     $webkit->set_libs($pkgconfig{libs});
     $webkit->add_xs(@xs_files);
     $webkit->add_pm('lib/Gtk2/WebKit.pm', '$(INST_LIBDIR)/WebKit.pm');

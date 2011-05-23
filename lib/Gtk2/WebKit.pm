@@ -3,7 +3,6 @@ package Gtk2::WebKit;
 use strict;
 use warnings;
 use Gtk2;
-use Gtk2::Soup;
 use base qw/DynaLoader/;
 
 our $VERSION = '0.09';
@@ -11,6 +10,12 @@ our $VERSION = '0.09';
 sub dl_load_flags { 0x01 }
 
 __PACKAGE__->bootstrap($VERSION);
+
+if (__PACKAGE__->HAS_GLIB_SOUP) {
+	require Glib::Soup;
+	Glib::Soup->import();
+}
+
 
 =head1 NAME
 
