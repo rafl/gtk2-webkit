@@ -27,14 +27,9 @@ webkit_check_version (class, major, minor, micro)
 		RETVAL
 
 
-#SoupSession *
-GObject *
+SoupSession *
 webkit_get_default_session (class)
-	CODE:
-		RETVAL = (GObject *) webkit_get_default_session();
-
-	OUTPUT:
-		RETVAL
+	C_ARGS:
 
 
 BOOT:
