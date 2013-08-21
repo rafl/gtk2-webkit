@@ -26,7 +26,12 @@ webkit_web_resource_get_data (web_resource)
 		GString *data;
 	CODE:
 		data = webkit_web_resource_get_data (web_resource);
-		RETVAL = newSVpvn (data->str, data->len);
+		if (data == NULL) {
+			RETVAL = &PL_sv_undef;
+		}
+		else {
+			RETVAL = newSVpvn (data->str, data->len);
+		}
 	OUTPUT:
 		RETVAL
 

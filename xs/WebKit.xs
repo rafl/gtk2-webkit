@@ -26,6 +26,23 @@ webkit_check_version (class, major, minor, micro)
 	OUTPUT:
 		RETVAL
 
+
+#ifdef GLIB_SOUP_PERL
+
+int
+HAS_GLIB_SOUP (class)
+	CODE:
+		RETVAL = 1;
+	OUTPUT:
+		RETVAL
+
+SoupSession *
+webkit_get_default_session (class)
+	C_ARGS:
+
+#endif
+
+
 BOOT:
 #include "register.xsh"
 #include "boot.xsh"

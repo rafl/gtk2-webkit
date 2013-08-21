@@ -11,6 +11,12 @@ sub dl_load_flags { 0x01 }
 
 __PACKAGE__->bootstrap($VERSION);
 
+if (__PACKAGE__->HAS_GLIB_SOUP) {
+	require Glib::Soup;
+	Glib::Soup->import();
+}
+
+
 =head1 NAME
 
 Gtk2::WebKit - Web content engine library for Gtk2
